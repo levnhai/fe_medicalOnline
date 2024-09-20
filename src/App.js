@@ -1,12 +1,18 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRoutes } from '~/routes';
+import { publicRoutes, privateRoutes } from '~/routes';
 import { Fragment } from 'react';
+import './index.css'; 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor } from './redux/store';
 
 import DefaultLayout from './layouts/defaultLayout';
 
 function App() {
   return (
-    <>
+    <PersistGate loading={null} persistor={persistor}>
       <Router>
         <Routes>
           {publicRoutes.map((route, index) => {
@@ -24,14 +30,22 @@ function App() {
                 element={
                   <Layout>
                     <Page />
+                    <ToastContainer />
                   </Layout>
                 }
               />
             );
           })}
+          {privateRoutes.map((route, index) => (
+            <Route
+              key={`private-${index}`}
+              path={route.path}
+              element={route.element}
+            />
+          ))}
         </Routes>
       </Router>
-    </>
+    </PersistGate>
   );
 }
 
