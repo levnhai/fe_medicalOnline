@@ -1,0 +1,70 @@
+.authenticate {
+  min-height: 100vh;
+  position: relative;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f1eff2;
+  margin: 0px -15px;
+}
+
+.content {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+}
+
+.header {
+  width: 500px;
+  max-width: 85%;
+  margin: 15px auto 0px;
+}
+
+.icon-back {
+  color: #2698d6;
+  margin-bottom: 10px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo-link img {
+  max-height: 60px;
+  max-width: 250px;
+  margin: 20px 0px;
+}
+
+.authenticate--bg {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+}
+
+.authenticate--bg__img {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(https://id-v121.medpro.com.vn/static/media/cover-14.cdc08a1d.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.img-shape {
+  position: absolute;
+  background-color: #f1eff2;
+  height: 100%;
+  width: 50px;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 5% 100%, 0 100%);
+}

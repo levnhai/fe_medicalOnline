@@ -1,0 +1,98 @@
+.checkPhone-wrapper {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px 28px 10px;
+}
+
+.text-center {
+  text-align: center;
+  font-size: 16px;
+}
+.wrapper-input {
+  margin-bottom: 28px;
+}
+
+.tel-input {
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+
+.tel-input .form-control {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  padding-left: 48px;
+  margin-left: 0;
+  background: #fff;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  line-height: 25px;
+  outline: none;
+
+  &:focus {
+    color: #495057;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+.selected-flag img {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+.loginBtn {
+  width: 100%;
+  height: 50px;
+  background-color: #1da1f2 !important;
+  color: #fff;
+  margin: 20px 0px 50px;
+
+  &:active {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    background-color: #0967a0 !important;
+  }
+}
+.socialBtn-item {
+  width: 100%;
+}
+
+.socialBtn-btn {
+  width: 100%;
+  color: #fff;
+}
+
+.socialBtn--btn__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.socialBtn--img {
+  margin-right: 10px;
+}
+
+.socialBtn--btn__title {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.socialBtn-item:nth-child(1) .socialBtn-btn {
+  background-color: #ef5252;
+  margin-bottom: 20px;
+}
+
+.socialBtn-item:nth-child(2) .socialBtn-btn {
+  background-color: #293688;
+}
+
+.socialBtn--img {
+  width: 26px;
+  height: 26px;
+}

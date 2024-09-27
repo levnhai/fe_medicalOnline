@@ -1,8 +1,16 @@
 import config from '~/config';
 
-import Home from '~/pages/home';
+// layout
+import HeaderOnly from '~/layouts/headerOnly';
 
-const publicRoutes = [{ path: config.routers.home, component: Home }];
+// page
+import Home from '~/pages/home';
+import CheckPhone from '~/features/authentication/check_phone';
+
+const publicRoutes = [
+  { path: config.routers.home, component: Home },
+  { path: config.routers.checkPhone, component: CheckPhone, layout: HeaderOnly },
+];
 
 const privateRoutes = [];
 
