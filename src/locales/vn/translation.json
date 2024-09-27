@@ -1,0 +1,12 @@
+{
+  "header": {
+    "news": "Tin tức",
+    "account": "Tài khoản",
+    "download_app": "Tải ứng dụng"
+  },
+  "actions": {
+    "add": "Thêm",
+    "edit": "Sửa",
+    "delete": "Xóa"
+  }
+}

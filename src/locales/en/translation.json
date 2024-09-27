@@ -1,0 +1,12 @@
+{
+  "header": {
+    "news": "News",
+    "account": "Account",
+    "download_app": "Download app"
+  },
+  "actions": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete"
+  }
+}
