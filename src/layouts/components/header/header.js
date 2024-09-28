@@ -160,7 +160,8 @@ function Header() {
                   className={cx('accountBtn')}
                   onClick={handleShowModalProfile}
                 >
-                  {isLoggedIn && user.userData && `${user.userData.fullName}` ? shortName : t('header.account')}
+                  {/* {isLoggedIn && user.userData && `${user.userData.fullName}` ? shortName : t('header.account')}/ */}
+                   {t('header.account')}
                 </Button>
               </div>
               <div className={cx('language')}>
@@ -208,8 +209,9 @@ function Header() {
                   <div className={cx('profile-header')}>
                     <div className={cx('profile-avata')}></div>
                     <div className={cx('profile-info')}>
-                      <span> Xin chào </span>
-                      <h5> {`${user.userData.fullName}`}</h5>
+                    <span>{t('header.greeting')}</span>
+                      {/* <h5> {`${user.userData.fullName}`}</h5> */}
+                      <h5> Bùi dức đạt</h5>
                     </div>
                   </div>
                   <ul className={cx('information-list')}>
@@ -218,7 +220,7 @@ function Header() {
                         <span className={cx('icon')}>
                           <IoPersonSharp style={{ width: '1.7rem', height: '1.7rem' }} />
                         </span>
-                        <span className={cx('title')}>Hồ sơ bệnh nhân</span>
+                        <span className={cx('title')}>{t('header.patient_profile')}</span>
                       </div>
                     </li>
                     <li className={cx('information-item')}>
@@ -226,7 +228,7 @@ function Header() {
                         <span className={cx('icon')}>
                           <i className="fa-regular fa-note-sticky"></i>
                         </span>
-                        <span className={cx('title')}>Phiếu khám bệnh</span>
+                        <span className={cx('title')}>{t('header.medical_record')}</span>
                       </div>
                     </li>
                     <li className={cx('information-item')}>
@@ -234,7 +236,7 @@ function Header() {
                         <span className={cx('icon')}>
                           <i className="fa-regular fa-bell"></i>
                         </span>
-                        <span className={cx('title')}>Thông báo</span>
+                        <span className={cx('title')}>{t('header.notifications')}</span>
                       </div>
                     </li>
                     <li className={cx('information-item')}>
@@ -242,18 +244,18 @@ function Header() {
                         onClick={() => {
                           // dispatch(logoutUser());
                           setShowModal(false);
-                          toast.success('Đăng xuất thành công');
+                          toast.success(t('header.logout_success'));
                         }}
                       >
                         <span className={cx('icon')}>
                           <i className="fa-solid fa-right-from-bracket"></i>
                         </span>
-                        <span className={cx('title')}>Đăng xuất</span>
+                        <span className={cx('title')}>{t('header.logout')}</span>
                       </div>
                     </li>
                     <li className={cx('information-item')} disabled>
                       <div>
-                        <span>Câp nhật mới nhất: 29/12/2023</span>
+                      <span>{t('header.last_update', { date: '29/12/2023' })}</span>
                       </div>
                     </li>
                   </ul>
@@ -270,36 +272,40 @@ function Header() {
                   <SupportIcon />
                 </div>
                 <div className={cx('suportTitle')}>
-                  Hổ trợ đặt khám
+                {t('header.support_title')}
                   <div>1900 1211</div>
                 </div>
               </div>
             </a>
             <div className={cx('navbar')}>
-              <ul className={cx('navbarList')}>
-                {menu?.map((menuItem) => (
-                  <li className={cx('navbarItem')}>
-                    <Link className={cx('navbarLink')} to={menuItem.href}>
-                      {menuItem.label}
-                    </Link>
-                    <span>
-                      <IoMdArrowDropdown style={{ width: '1.5 rem', height: '1.5rem' }} />
-                    </span>
-                    <div className={cx('menu')}>
-                      <ul>
-                        {menuItem?.children?.map((childrenItem) => (
-                          <li className={cx('menuItem')}>
-                            <Link className={cx('menuLink')} to={childrenItem.href}>
-                              {childrenItem.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <ul className={cx('navbarList')}>
+        {menu.map((menuItem) => (
+          <li key={menuItem.href} className={cx('navbarItem')}>
+            <Link className={cx('navbarLink')} to={menuItem.href}>
+              {t(`menu.${menuItem.labelKey}`)}
+            </Link>
+            {menuItem.children && (
+              <>
+                <span>
+                  <IoMdArrowDropdown style={{ width: '1.5rem', height: '1.5rem' }} />
+                </span>
+                <div className={cx('menu')}>
+                  <ul>
+                    {menuItem.children.map((childItem) => (
+                      <li key={childItem.href} className={cx('menuItem')}>
+                        <Link className={cx('menuLink')} to={childItem.href}>
+                          {t(`menu.${childItem.labelKey}`)}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
           </div>
         </div>
       </div>
