@@ -1,0 +1,85 @@
+.support {
+  position: relative;
+  max-width: 1180px;
+  margin: auto;
+  padding-bottom: 69px;
+}
+
+.support_image {
+  background-image: url(../../../assets/images/support.png);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 160px 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  box-shadow: 0 4px 20px hsla(220, 8%, 55%, 0.2);
+}
+
+.support_method {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  top: 106px;
+  right: 0;
+  padding: 0px 30px;
+}
+.support_info {
+  display: flex;
+  gap: 20px;
+  flex: 2.4;
+  justify-content: flex-end;
+}
+
+.info_phoneIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 89px;
+  height: 89px;
+  border-radius: 99999px;
+  background-color: var(--white-color);
+}
+
+.support_infoTitle {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 28px;
+  color: #fff;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.support_infoPhone {
+  color: #fff;
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 49px;
+  line-height: 57px;
+}
+
+.support_qrCard {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  text-align: center;
+  flex: 1;
+}
+
+.support_qr {
+  background-color: var(--white-color);
+  padding: 14px 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
